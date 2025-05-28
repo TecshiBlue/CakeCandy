@@ -1,0 +1,559 @@
+create database bd_cake
+go
+
+use bd_cake
+go
+
+CREATE TABLE SABOR(
+    idSabor INT IDENTITY(1,1) PRIMARY KEY,
+    nombreSabor VARCHAR(50) NOT NULL
+)
+GO
+
+CREATE TABLE CATEGORIA(
+    idCategoria INT IDENTITY(1,1) PRIMARY KEY,
+    nombreCategoria VARCHAR(50) NOT NULL
+)
+GO
+
+CREATE TABLE MARCA(
+    idMarca INT IDENTITY(1,1) PRIMARY KEY,
+    nombreMarca VARCHAR(50) NOT NULL,
+	paisOrigenMarca VARCHAR(50)
+)
+GO
+
+CREATE TABLE PRESENTACION(
+    idPresentacion INT IDENTITY(1,1) PRIMARY KEY,
+    nombrePresentacion VARCHAR(50) NOT NULL
+)
+GO
+
+CREATE TABLE DULCE(
+    idDulce INT IDENTITY(1,1) PRIMARY KEY,
+    nombreDulce VARCHAR(100) NOT NULL,
+	precioDulce DECIMAL(10,2) NOT NULL CHECK (precioDulce > 0),
+    stockDulce INT DEFAULT 0,
+    idSabor INT NOT NULL,
+    idCategoria INT NOT NULL,
+    idMarca INT NOT NULL,
+    idPresentacion INT NOT NULL,
+    CONSTRAINT FK_DULCE_SABOR FOREIGN KEY (idSabor) REFERENCES SABOR(idSabor),
+    CONSTRAINT FK_DULCE_CATEGORIA FOREIGN KEY (idCategoria) REFERENCES CATEGORIA(idCategoria),
+    CONSTRAINT FK_DULCE_MARCA FOREIGN KEY (idMarca) REFERENCES MARCA(idMarca),
+    CONSTRAINT FK_DULCE_PRESENTACION FOREIGN KEY (idPresentacion) REFERENCES PRESENTACION(idPresentacion)
+)
+GO
+
+
+CREATE TABLE ROL (
+idRol INT IDENTITY(1,1) PRIMARY KEY, 
+nombreRol VARCHAR(40) NOT NULL,
+)
+go
+
+
+
+CREATE TABLE USUARIO(
+usuarioID INT IDENTITY(1,1) PRIMARY KEY,
+nombre VARCHAR(100) NOT NULL,
+passwordHash VARCHAR(200) NOT NULL,
+idRol INT NOT NULL,
+CONSTRAINT FK_USUARIO_ROL FOREIGN KEY (idRol) REFERENCES ROL(idRol)
+)
+select * from USUARIO
+
+CREATE TABLE CLIENTE(
+idCliente INT IDENTITY(1,1) PRIMARY KEY,
+nombreCliente VARCHAR(100) NOT NULL,
+apellidoCliente VARCHAR(100) NOT NULL,
+emailCliente VARCHAR(100) NOT NULL,
+telefonoCliente VARCHAR(10) NOT NULL
+)
+go
+
+CREATE TABLE VENTA(
+idVenta INT IDENTITY(1,1) PRIMARY KEY,
+fechaVenta DATETIME NOT NULL DEFAULT GETDATE(),
+idCliente INT NOT NULL,
+usuarioID INT NOT NULL,
+CONSTRAINT FK_VENTAS_CLIENTE FOREIGN KEY (idCliente) REFERENCES CLIENTE(idCliente),
+CONSTRAINT FK_VENTAS_USUARIO FOREIGN KEY (usuarioID) REFERENCES USUARIO(usuarioID)
+)
+go
+
+CREATE TABLE DETALLE_VENTA(
+idDetalleVenta INT IDENTITY(1,1) PRIMARY KEY,
+idVenta INT NOT NULL,
+idDulce INT NOT NULL,
+cantidadDetalleVenta INT NOT NULL,
+CONSTRAINT FK_DETALLE_VENTA_VENTA FOREIGN KEY (idVenta) REFERENCES VENTA(idVenta),
+CONSTRAINT FK_DETALLE_VENTA_CLIENTE FOREIGN KEY (idDulce) REFERENCES DULCE(idDulce),
+)
+go
+
+-- DULCE CRUD
+CREATE OR ALTER PROCEDURE USP_DULCE_CRUD
+@INDICADOR VARCHAR(40),
+@ID_DULCE INT = NULL,
+@NOMBRE VARCHAR(100) = NULL,
+@PRECIO DECIMAL(10,2) = NULL,
+@STOCK INT = NULL,
+@ID_SABOR INT = NULL,
+@ID_CATEGORIA INT = NULL,
+@ID_MARCA INT = NULL,
+@ID_PRESENTACION INT = NULL
+AS
+BEGIN
+    -- INSERTAR
+    IF @INDICADOR = 'INSERTAR'
+    BEGIN
+        INSERT INTO DULCE(nombreDulce, precioDulce, stockDulce, idSabor, idCategoria, idMarca, idPresentacion)
+        VALUES(@NOMBRE, @PRECIO, @STOCK, @ID_SABOR, @ID_CATEGORIA, @ID_MARCA, @ID_PRESENTACION)
+    END
+    
+    -- ELIMINAR
+    IF @INDICADOR = 'ELIMINAR'
+    BEGIN
+        DELETE FROM DULCE WHERE idDulce = @ID_DULCE
+    END
+    
+    -- ACTUALIZAR
+    IF @INDICADOR = 'ACTUALIZAR'
+    BEGIN
+        UPDATE DULCE SET 
+            nombreDulce = @NOMBRE,
+            precioDulce = @PRECIO,
+            stockDulce = @STOCK,
+            idSabor = @ID_SABOR,
+            idCategoria = @ID_CATEGORIA,
+            idMarca = @ID_MARCA,
+            idPresentacion = @ID_PRESENTACION
+        WHERE idDulce = @ID_DULCE
+    END
+    
+    -- CONSULTAR TODO
+    IF @INDICADOR = 'CONSULTAR TODO'
+    BEGIN
+         SELECT 
+            idDulce,
+            nombreDulce,
+            precioDulce,
+            stockDulce,
+            idSabor,
+            idCategoria,
+            idMarca,
+            idPresentacion
+        FROM DULCE 
+    END
+    
+    -- CONSULTAR POR ID
+    IF @INDICADOR = 'CONSULTARXID'
+    BEGIN
+        SELECT 
+            idDulce,
+            nombreDulce,
+            precioDulce,
+            stockDulce,
+            idSabor,
+            idCategoria,
+            idMarca,
+            idPresentacion
+        FROM DULCE 
+        WHERE idDulce = @ID_DULCE
+    END
+END
+GO
+
+-- SABOR CRUD
+CREATE OR ALTER PROCEDURE USP_SABOR_CRUD
+@INDICADOR VARCHAR(40),
+@ID_SABOR INT = NULL,
+@NOMBRE VARCHAR(50) = NULL
+AS
+BEGIN
+    -- INSERTAR
+    IF @INDICADOR = 'INSERTAR'
+    BEGIN
+        INSERT INTO SABOR(nombreSabor) VALUES(@NOMBRE)
+    END
+    
+    -- ELIMINAR
+    IF @INDICADOR = 'ELIMINAR'
+    BEGIN
+        DELETE FROM SABOR WHERE idSabor = @ID_SABOR
+    END
+    
+    -- ACTUALIZAR
+    IF @INDICADOR = 'ACTUALIZAR'
+    BEGIN
+        UPDATE SABOR SET nombreSabor = @NOMBRE WHERE idSabor = @ID_SABOR
+    END
+    
+    -- CONSULTAR TODO
+    IF @INDICADOR = 'CONSULTAR TODO'
+    BEGIN
+        SELECT idSabor, nombreSabor FROM SABOR
+    END
+    
+    -- CONSULTAR POR ID
+    IF @INDICADOR = 'CONSULTARXID'
+    BEGIN
+        SELECT idSabor, nombreSabor FROM SABOR WHERE idSabor = @ID_SABOR
+    END
+END
+GO
+
+-- CATEGORIA CRUD
+CREATE OR ALTER PROCEDURE USP_CATEGORIA_CRUD
+@INDICADOR VARCHAR(40),
+@ID_CATEGORIA INT = NULL,
+@NOMBRE VARCHAR(50) = NULL
+AS
+BEGIN
+    -- INSERTAR
+    IF @INDICADOR = 'INSERTAR'
+    BEGIN
+        INSERT INTO CATEGORIA(nombreCategoria) VALUES(@NOMBRE)
+    END
+    
+    -- ELIMINAR
+    IF @INDICADOR = 'ELIMINAR'
+    BEGIN
+        DELETE FROM CATEGORIA WHERE idCategoria = @ID_CATEGORIA
+    END
+    
+    -- ACTUALIZAR
+    IF @INDICADOR = 'ACTUALIZAR'
+    BEGIN
+        UPDATE CATEGORIA SET nombreCategoria = @NOMBRE WHERE idCategoria = @ID_CATEGORIA
+    END
+    
+    -- CONSULTAR TODO
+    IF @INDICADOR = 'CONSULTAR TODO'
+    BEGIN
+        SELECT idCategoria, nombreCategoria FROM CATEGORIA
+    END
+    
+    -- CONSULTAR POR ID
+    IF @INDICADOR = 'CONSULTARXID'
+    BEGIN
+        SELECT idCategoria, nombreCategoria FROM CATEGORIA WHERE idCategoria = @ID_CATEGORIA
+    END
+END
+GO
+
+-- MARCA CRUD
+CREATE OR ALTER PROCEDURE USP_MARCA_CRUD
+@INDICADOR VARCHAR(40),
+@ID_MARCA INT = NULL,
+@NOMBRE VARCHAR(50) = NULL,
+@PAIS_ORIGEN VARCHAR(50) = NULL
+AS
+BEGIN
+    -- INSERTAR
+    IF @INDICADOR = 'INSERTAR'
+    BEGIN
+        INSERT INTO MARCA(nombreMarca, paisOrigenMarca) VALUES(@NOMBRE, @PAIS_ORIGEN)
+    END
+    
+    -- ELIMINAR
+    IF @INDICADOR = 'ELIMINAR'
+    BEGIN
+        DELETE FROM MARCA WHERE idMarca = @ID_MARCA
+    END
+    
+    -- ACTUALIZAR
+    IF @INDICADOR = 'ACTUALIZAR'
+    BEGIN
+        UPDATE MARCA SET 
+            nombreMarca = @NOMBRE,
+            paisOrigenMarca = @PAIS_ORIGEN
+        WHERE idMarca = @ID_MARCA
+    END
+    
+    -- CONSULTAR TODO
+    IF @INDICADOR = 'CONSULTAR TODO'
+    BEGIN
+        SELECT idMarca, nombreMarca, paisOrigenMarca FROM MARCA
+    END
+    
+    -- CONSULTAR POR ID
+    IF @INDICADOR = 'CONSULTARXID'
+    BEGIN
+        SELECT idMarca, nombreMarca, paisOrigenMarca FROM MARCA WHERE idMarca = @ID_MARCA
+    END
+END
+GO
+
+-- PRESENTACION CRUD
+CREATE OR ALTER PROCEDURE USP_PRESENTACION_CRUD
+@INDICADOR VARCHAR(40),
+@ID_PRESENTACION INT = NULL,
+@NOMBRE VARCHAR(50) = NULL
+AS
+BEGIN
+    -- INSERTAR
+    IF @INDICADOR = 'INSERTAR'
+    BEGIN
+        INSERT INTO PRESENTACION(nombrePresentacion) VALUES(@NOMBRE)
+    END
+    
+    -- ELIMINAR
+    IF @INDICADOR = 'ELIMINAR'
+    BEGIN
+        DELETE FROM PRESENTACION WHERE idPresentacion = @ID_PRESENTACION
+    END
+    
+    -- ACTUALIZAR
+    IF @INDICADOR = 'ACTUALIZAR'
+    BEGIN
+        UPDATE PRESENTACION SET nombrePresentacion = @NOMBRE WHERE idPresentacion = @ID_PRESENTACION
+    END
+    
+    -- CONSULTAR TODO
+    IF @INDICADOR = 'CONSULTAR TODO'
+    BEGIN
+        SELECT idPresentacion, nombrePresentacion FROM PRESENTACION
+    END
+    
+    -- CONSULTAR POR ID
+    IF @INDICADOR = 'CONSULTARXID'
+    BEGIN
+        SELECT idPresentacion, nombrePresentacion FROM PRESENTACION WHERE idPresentacion = @ID_PRESENTACION
+    END
+END
+GO
+
+-- CLIENTE CRUD
+CREATE OR ALTER PROCEDURE USP_CLIENTE_CRUD
+@INDICADOR VARCHAR(40),
+@ID_CLIENTE INT = NULL,
+@NOMBRE VARCHAR(100) = NULL,
+@APELLIDO VARCHAR(100) = NULL,
+@EMAIL VARCHAR(100) = NULL,
+@TELEFONO VARCHAR(10) = NULL
+AS
+BEGIN
+    IF @INDICADOR = 'INSERTAR'
+    BEGIN
+        INSERT INTO CLIENTE(nombreCliente, apellidoCliente, emailCliente, telefonoCliente)
+        VALUES(@NOMBRE, @APELLIDO, @EMAIL, @TELEFONO)
+    END
+
+    IF @INDICADOR = 'ELIMINAR'
+    BEGIN
+        DELETE FROM CLIENTE WHERE idCliente = @ID_CLIENTE
+    END
+
+    IF @INDICADOR = 'ACTUALIZAR'
+    BEGIN
+        UPDATE CLIENTE
+        SET nombreCliente = @NOMBRE,
+            apellidoCliente = @APELLIDO,
+            emailCliente = @EMAIL,
+            telefonoCliente = @TELEFONO
+        WHERE idCliente = @ID_CLIENTE
+    END
+
+    IF @INDICADOR = 'CONSULTAR TODO'
+    BEGIN
+        SELECT idCliente, nombreCliente, apellidoCliente, emailCliente, telefonoCliente FROM CLIENTE
+    END
+
+    IF @INDICADOR = 'CONSULTARXID'
+    BEGIN
+        SELECT idCliente, nombreCliente, apellidoCliente, emailCliente, telefonoCliente FROM CLIENTE WHERE idCliente = @ID_CLIENTE
+    END
+END
+GO
+
+-- VENTA CRUD
+CREATE OR ALTER PROCEDURE USP_VENTA_CRUD
+    @INDICADOR VARCHAR(40),
+    @ID_VENTA INT = NULL,
+    @ID_CLIENTE INT = NULL,
+    @ID_USUARIO INT = NULL
+AS
+BEGIN
+    IF @INDICADOR = 'INSERTAR'
+    BEGIN
+        INSERT INTO VENTA(idCliente, usuarioID)
+        VALUES(@ID_CLIENTE, @ID_USUARIO)
+    END
+
+    IF @INDICADOR = 'ELIMINAR'
+    BEGIN
+        DELETE FROM VENTA WHERE idVenta = @ID_VENTA
+    END
+
+    IF @INDICADOR = 'ACTUALIZAR'
+    BEGIN
+        UPDATE VENTA
+        SET idCliente = @ID_CLIENTE,
+		usuarioID = @ID_USUARIO
+        WHERE idVenta = @ID_VENTA
+    END
+
+    IF @INDICADOR = 'CONSULTAR TODO'
+    BEGIN
+        SELECT idVenta, fechaVenta, idCliente, usuarioID FROM VENTA
+    END
+
+    IF @INDICADOR = 'CONSULTARXID'
+    BEGIN
+        SELECT idVenta, fechaVenta, idCliente, usuarioID FROM VENTA WHERE idVenta = @ID_VENTA
+    END
+END
+GO
+
+
+-- DETALLE_VENTA CRUD
+CREATE OR ALTER PROCEDURE USP_DETALLE_VENTA_CRUD
+@INDICADOR VARCHAR(40),
+@ID_DETALLE_VENTA INT = NULL,
+@ID_VENTA INT = NULL,
+@ID_DULCE INT = NULL,
+@CANTIDAD INT = NULL
+AS
+BEGIN
+    IF @INDICADOR = 'INSERTAR'
+    BEGIN
+        INSERT INTO DETALLE_VENTA(idVenta, idDulce, cantidadDetalleVenta)
+        VALUES(@ID_VENTA, @ID_DULCE, @CANTIDAD)
+    END
+
+    IF @INDICADOR = 'ELIMINAR'
+    BEGIN
+        DELETE FROM DETALLE_VENTA WHERE idDetalleVenta = @ID_DETALLE_VENTA
+    END
+
+    IF @INDICADOR = 'ACTUALIZAR'
+    BEGIN
+        UPDATE DETALLE_VENTA
+        SET idVenta = @ID_VENTA,
+            idDulce = @ID_DULCE,
+            cantidadDetalleVenta = @CANTIDAD
+        WHERE idDetalleVenta = @ID_DETALLE_VENTA
+    END
+
+    IF @INDICADOR = 'CONSULTAR TODO'
+    BEGIN
+        SELECT idDetalleVenta, idVenta, idDulce, cantidadDetalleVenta FROM DETALLE_VENTA
+    END
+
+    IF @INDICADOR = 'CONSULTARXID'
+    BEGIN
+        SELECT idDetalleVenta, idVenta, idDulce, cantidadDetalleVenta FROM DETALLE_VENTA
+        WHERE idDetalleVenta = @ID_DETALLE_VENTA
+    END
+END
+GO
+
+
+-- ROL CRUD
+CREATE OR ALTER PROCEDURE USP_ROL_CRUD
+@INDICADOR VARCHAR(40),
+@ID_ROL INT = NULL,
+@NOMBRE_ROL VARCHAR(40) = NULL
+AS
+BEGIN
+    -- INSERTAR
+    IF @INDICADOR = 'INSERTAR'
+    BEGIN
+        INSERT INTO ROL(nombreRol) VALUES(@NOMBRE_ROL)
+    END
+    
+    -- ELIMINAR
+    IF @INDICADOR = 'ELIMINAR'
+    BEGIN
+        DELETE FROM ROL WHERE idRol = @ID_ROL
+    END
+    
+    -- ACTUALIZAR
+    IF @INDICADOR = 'ACTUALIZAR'
+    BEGIN
+        UPDATE ROL SET nombreRol = @NOMBRE_ROL WHERE idRol = @ID_ROL
+    END
+    
+    -- CONSULTAR TODO
+    IF @INDICADOR = 'CONSULTAR TODO'
+    BEGIN
+        SELECT idRol, nombreRol FROM ROL
+    END
+    
+    -- CONSULTAR POR ID
+    IF @INDICADOR = 'CONSULTARXID'
+    BEGIN
+        SELECT idRol, nombreRol FROM ROL WHERE idRol = @ID_ROL
+    END
+END
+GO
+--USUARIO CRUD
+CREATE OR ALTER PROCEDURE USP_USUARIO_CRUD
+    @INDICADOR VARCHAR(40),
+    @USUARIO_ID INT = NULL,
+    @NOMBRE VARCHAR(100) = NULL,
+    @PASSWORD_HASH VARCHAR(64) = NULL,
+	@ID_ROL INT = NULL
+AS
+BEGIN
+    -- INSERTAR
+    IF @INDICADOR = 'INSERTAR'
+    BEGIN
+        INSERT INTO USUARIO(nombre, passwordHash, idRol)
+        VALUES(@NOMBRE, @PASSWORD_HASH, @ID_ROL )
+    END
+    
+    -- ELIMINAR
+    IF @INDICADOR = 'ELIMINAR'
+    BEGIN
+        DELETE FROM USUARIO WHERE usuarioID = @USUARIO_ID
+    END
+    
+    -- ACTUALIZAR
+    IF @INDICADOR = 'ACTUALIZAR'
+    BEGIN
+        UPDATE USUARIO 
+        SET nombre = @NOMBRE, 
+            passwordHash = @PASSWORD_HASH,
+			idRol = @ID_ROL
+        WHERE usuarioID = @USUARIO_ID
+    END
+    
+    -- CONSULTAR TODO
+    IF @INDICADOR = 'CONSULTAR TODO'
+    BEGIN
+        SELECT usuarioID, nombre, passwordHash, idRol
+        FROM USUARIO
+    END
+    
+    -- CONSULTAR POR ID
+    IF @INDICADOR = 'CONSULTARXID'
+    BEGIN
+        SELECT usuarioID, nombre, passwordHash, idRol
+        FROM USUARIO 
+        WHERE usuarioID = @USUARIO_ID
+    END
+    
+    -- VALIDAR CREDENCIALES 
+    -- VALIDAR CREDENCIALES 
+IF @INDICADOR = 'VALIDAR_CREDENCIALES'
+BEGIN
+    SELECT usuarioID, nombre, idRol
+    FROM USUARIO 
+    WHERE nombre = @NOMBRE 
+    AND passwordHash = @PASSWORD_HASH
+END
+
+END
+GO
+
+
+INSERT INTO CATEGORIA(nombreCategoria)
+VALUES
+('Caramelo'),
+('Trufa');
+go
+
+
