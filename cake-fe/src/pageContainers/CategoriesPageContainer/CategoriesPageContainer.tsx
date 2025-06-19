@@ -49,6 +49,7 @@ const CategoriesPageContainer = () => {
 
   const handleEdit = async (updatedItem: Category) => {
     try {
+      console.log("updateItem: ", updatedItem)
       setIsSubmitting(true);
       await callApi<Category, Category>({
         url: `/api/categoria/${updatedItem.idCategoria}`,

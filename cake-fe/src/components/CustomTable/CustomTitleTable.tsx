@@ -1,6 +1,7 @@
-import { PlusCircle } from "lucide-react";
+import { PlusCircle, FileSpreadsheet, Printer } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import FormModal from "./FormModal";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu";
 
 interface CustomTitleTableProps<T> {
   title: string;
@@ -20,8 +21,12 @@ export function CustomTitleTable<T>({
   }, {} as any) as T;
 
   return (
-    <div className="flex items-center justify-between">
+    <>
+    <div className="flex items-center">
+      
       <h1 className="text-2xl font-bold">{title}</h1>
+     
+      <div className="flex justify-end w-100 mx-6">     
       <div className="flex items-center gap-4">
         <FormModal
           trigger={
@@ -36,7 +41,31 @@ export function CustomTitleTable<T>({
           onSave={onAdd}
         />
       </div>
+      
     </div>
+    <div>
+       <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline">
+                
+               Exportar...
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => {}}>
+                <FileSpreadsheet className="mr-2 h-4 w-4" />
+                Exportar a Excel
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => {}}>
+                <Printer className="mr-2 h-4 w-4" />
+                Exportar a PDF
+              </DropdownMenuItem>
+              
+            </DropdownMenuContent>
+          </DropdownMenu>
+          </div> 
+        </div>
+        </>
   );
 }
 
