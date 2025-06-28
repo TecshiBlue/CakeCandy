@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace proyectoCakeAPI7.DAO
 {
-    internal interface IRolDAO
+    public interface IRolDAO
     {
         List<Rol> GetAll();
         Rol GetById(int id);

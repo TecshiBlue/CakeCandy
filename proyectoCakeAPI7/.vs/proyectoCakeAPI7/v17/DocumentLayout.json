@@ -1,94 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\",
+  "WorkspaceRootPath": "C:\\Users\\ESTEFANIA\\Desktop\\CIBERTEC\\CICLO 5\\DSW\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|c:\\users\\estefania\\downloads\\dswi_proyecto\\dswi_proyecto\\proyectocakeapi7\\proyectocakeapi7\\dao\\daoimpl\\transaccionimpl\\ventadaoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\dao\\daoimpl\\transaccionimpl\\ventadaoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|c:\\users\\estefania\\desktop\\cibertec\\ciclo 5\\dsw\\dswi_proyecto\\dswi_proyecto\\proyectocakeapi7\\proyectocakeapi7\\controllers\\exportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\controllers\\exportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|c:\\users\\estefania\\downloads\\dswi_proyecto\\dswi_proyecto\\proyectocakeapi7\\proyectocakeapi7\\models\\transaccion\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\models\\transaccion\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\dao\\daoimpl\\dulcedaoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\dao\\daoimpl\\dulcedaoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\dao\\daoimpl\\categoriadaoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\dao\\daoimpl\\categoriadaoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\dao\\daoimpl\\transaccionimpl\\clientedaoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\dao\\daoimpl\\transaccionimpl\\clientedaoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\dao\\daoimpl\\transaccionimpl\\detalleventaimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\dao\\daoimpl\\transaccionimpl\\detalleventaimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\models\\user\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\models\\user\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\models\\user\\usuariologinrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\models\\user\\usuariologinrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\dao\\daoimpl\\roldaoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\dao\\daoimpl\\roldaoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\dao\\daoimpl\\marcadaoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Desktop\\CIBERTEC\\CICLO 5\\DSW\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\dao\\daoimpl\\marcadaoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\dao\\daoimpl\\marcadaoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\dao\\daoimpl\\usuariodaoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\dao\\daoimpl\\usuariodaoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Desktop\\CIBERTEC\\CICLO 5\\DSW\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\dao\\iusuariodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\dao\\iusuariodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Desktop\\CIBERTEC\\CICLO 5\\DSW\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\models\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\models\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\dao\\transacciondao\\iventadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\dao\\transacciondao\\iventadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\models\\transaccion\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\models\\transaccion\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\models\\transaccion\\detalleventa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\models\\transaccion\\detalleventa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\controllers\\detalleventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\controllers\\detalleventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\controllers\\saborcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\controllers\\saborcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|C:\\Users\\ESTEFANIA\\Desktop\\CIBERTEC\\CICLO 5\\DSW\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectocakeapi7\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E04FAD1D-F822-432A-9CC1-51F6DDF19F6F}|proyectoCakeAPI7\\proyectoCakeAPI7.csproj|solutionrelative:proyectocakeapi7\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -98,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 137,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -110,274 +42,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ClienteDaoImpl.cs",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\DaoImpl\\TransaccionImpl\\ClienteDaoImpl.cs",
-              "RelativeDocumentMoniker": "proyectoCakeAPI7\\DAO\\DaoImpl\\TransaccionImpl\\ClienteDaoImpl.cs",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\DaoImpl\\TransaccionImpl\\ClienteDaoImpl.cs",
-              "RelativeToolTip": "proyectoCakeAPI7\\DAO\\DaoImpl\\TransaccionImpl\\ClienteDaoImpl.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T14:00:15.053Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "VentaDaoImpl.cs",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\DaoImpl\\TransaccionImpl\\VentaDaoImpl.cs",
-              "RelativeDocumentMoniker": "proyectoCakeAPI7\\DAO\\DaoImpl\\TransaccionImpl\\VentaDaoImpl.cs",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\DaoImpl\\TransaccionImpl\\VentaDaoImpl.cs",
-              "RelativeToolTip": "proyectoCakeAPI7\\DAO\\DaoImpl\\TransaccionImpl\\VentaDaoImpl.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T14:01:01.973Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Models\\User\\Usuario.cs",
-              "RelativeDocumentMoniker": "proyectoCakeAPI7\\Models\\User\\Usuario.cs",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Models\\User\\Usuario.cs",
-              "RelativeToolTip": "proyectoCakeAPI7\\Models\\User\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T14:02:13.586Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UsuarioDaoImpl.cs",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\DaoImpl\\UsuarioDaoImpl.cs",
-              "RelativeDocumentMoniker": "proyectoCakeAPI7\\DAO\\DaoImpl\\UsuarioDaoImpl.cs",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\DaoImpl\\UsuarioDaoImpl.cs",
-              "RelativeToolTip": "proyectoCakeAPI7\\DAO\\DaoImpl\\UsuarioDaoImpl.cs",
-              "ViewState": "AgIAAHoAAAAAAAAAAAAowJkAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T14:03:14.694Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "IUsuarioDAO.cs",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\IUsuarioDAO.cs",
-              "RelativeDocumentMoniker": "proyectoCakeAPI7\\DAO\\IUsuarioDAO.cs",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\IUsuarioDAO.cs",
-              "RelativeToolTip": "proyectoCakeAPI7\\DAO\\IUsuarioDAO.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAqwA8AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T14:41:58.465Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "VentaController.cs",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Controllers\\VentaController.cs",
-              "RelativeDocumentMoniker": "proyectoCakeAPI7\\Controllers\\VentaController.cs",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Controllers\\VentaController.cs",
-              "RelativeToolTip": "proyectoCakeAPI7\\Controllers\\VentaController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T13:46:08.706Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "MarcaDaoImpl.cs",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\DaoImpl\\MarcaDaoImpl.cs",
+              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Desktop\\CIBERTEC\\CICLO 5\\DSW\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\DaoImpl\\MarcaDaoImpl.cs",
               "RelativeDocumentMoniker": "proyectoCakeAPI7\\DAO\\DaoImpl\\MarcaDaoImpl.cs",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\DaoImpl\\MarcaDaoImpl.cs",
+              "ToolTip": "C:\\Users\\ESTEFANIA\\Desktop\\CIBERTEC\\CICLO 5\\DSW\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\DaoImpl\\MarcaDaoImpl.cs",
               "RelativeToolTip": "proyectoCakeAPI7\\DAO\\DaoImpl\\MarcaDaoImpl.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAiwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T19:57:59.342Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "RolDaoImpl.cs",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\DaoImpl\\RolDaoImpl.cs",
-              "RelativeDocumentMoniker": "proyectoCakeAPI7\\DAO\\DaoImpl\\RolDaoImpl.cs",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\DaoImpl\\RolDaoImpl.cs",
-              "RelativeToolTip": "proyectoCakeAPI7\\DAO\\DaoImpl\\RolDaoImpl.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T19:58:00.159Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "CategoriaController.cs",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Controllers\\CategoriaController.cs",
-              "RelativeDocumentMoniker": "proyectoCakeAPI7\\Controllers\\CategoriaController.cs",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Controllers\\CategoriaController.cs",
-              "RelativeToolTip": "proyectoCakeAPI7\\Controllers\\CategoriaController.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAUwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T15:00:20.956Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "IVentaDAO.cs",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\TransaccionDAO\\IVentaDAO.cs",
-              "RelativeDocumentMoniker": "proyectoCakeAPI7\\DAO\\TransaccionDAO\\IVentaDAO.cs",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\TransaccionDAO\\IVentaDAO.cs",
-              "RelativeToolTip": "proyectoCakeAPI7\\DAO\\TransaccionDAO\\IVentaDAO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T15:12:14.153Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Web.config",
-              "RelativeDocumentMoniker": "proyectoCakeAPI7\\Web.config",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Web.config",
-              "RelativeToolTip": "proyectoCakeAPI7\\Web.config",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-05-10T18:45:46.618Z",
+              "WhenOpened": "2025-06-26T10:51:03.164Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UsuarioLoginRequest.cs",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Models\\User\\UsuarioLoginRequest.cs",
-              "RelativeDocumentMoniker": "proyectoCakeAPI7\\Models\\User\\UsuarioLoginRequest.cs",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Models\\User\\UsuarioLoginRequest.cs",
-              "RelativeToolTip": "proyectoCakeAPI7\\Models\\User\\UsuarioLoginRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T14:02:19.252Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Cliente.cs",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Models\\Transaccion\\Cliente.cs",
-              "RelativeDocumentMoniker": "proyectoCakeAPI7\\Models\\Transaccion\\Cliente.cs",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Models\\Transaccion\\Cliente.cs",
-              "RelativeToolTip": "proyectoCakeAPI7\\Models\\Transaccion\\Cliente.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAA9wAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T14:00:29.023Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Rol.cs",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Models\\Rol.cs",
-              "RelativeDocumentMoniker": "proyectoCakeAPI7\\Models\\Rol.cs",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Models\\Rol.cs",
-              "RelativeToolTip": "proyectoCakeAPI7\\Models\\Rol.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T15:14:01.762Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DetalleVentaImpl.cs",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\DaoImpl\\TransaccionImpl\\DetalleVentaImpl.cs",
-              "RelativeDocumentMoniker": "proyectoCakeAPI7\\DAO\\DaoImpl\\TransaccionImpl\\DetalleVentaImpl.cs",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\DaoImpl\\TransaccionImpl\\DetalleVentaImpl.cs",
-              "RelativeToolTip": "proyectoCakeAPI7\\DAO\\DaoImpl\\TransaccionImpl\\DetalleVentaImpl.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJkAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T13:57:05.464Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "DetalleVenta.cs",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Models\\Transaccion\\DetalleVenta.cs",
-              "RelativeDocumentMoniker": "proyectoCakeAPI7\\Models\\Transaccion\\DetalleVenta.cs",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Models\\Transaccion\\DetalleVenta.cs",
-              "RelativeToolTip": "proyectoCakeAPI7\\Models\\Transaccion\\DetalleVenta.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAA9wBgAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T13:55:45.488Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "ClienteController.cs",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Controllers\\ClienteController.cs",
-              "RelativeDocumentMoniker": "proyectoCakeAPI7\\Controllers\\ClienteController.cs",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Controllers\\ClienteController.cs",
-              "RelativeToolTip": "proyectoCakeAPI7\\Controllers\\ClienteController.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAIwEEAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T13:54:16.852Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "DetalleVentaController.cs",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Controllers\\DetalleVentaController.cs",
-              "RelativeDocumentMoniker": "proyectoCakeAPI7\\Controllers\\DetalleVentaController.cs",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Controllers\\DetalleVentaController.cs",
-              "RelativeToolTip": "proyectoCakeAPI7\\Controllers\\DetalleVentaController.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAAAEoAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T13:53:39.974Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "SaborController.cs",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Controllers\\SaborController.cs",
-              "RelativeDocumentMoniker": "proyectoCakeAPI7\\Controllers\\SaborController.cs",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Controllers\\SaborController.cs",
-              "RelativeToolTip": "proyectoCakeAPI7\\Controllers\\SaborController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T13:46:10.562Z"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 89,
-          "SelectedChildIndex": 2,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CategoriaDaoImpl.cs",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\DaoImpl\\CategoriaDaoImpl.cs",
-              "RelativeDocumentMoniker": "proyectoCakeAPI7\\DAO\\DaoImpl\\CategoriaDaoImpl.cs",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\DaoImpl\\CategoriaDaoImpl.cs",
-              "RelativeToolTip": "proyectoCakeAPI7\\DAO\\DaoImpl\\CategoriaDaoImpl.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAowAsAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T18:57:50.376Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "DulceDaoImpl.cs",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\DaoImpl\\DulceDaoImpl.cs",
-              "RelativeDocumentMoniker": "proyectoCakeAPI7\\DAO\\DaoImpl\\DulceDaoImpl.cs",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\DAO\\DaoImpl\\DulceDaoImpl.cs",
-              "RelativeToolTip": "proyectoCakeAPI7\\DAO\\DaoImpl\\DulceDaoImpl.cs",
-              "ViewState": "AgIAAIAAAAAAAAAAAAAIwIUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T20:03:35.267Z"
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Desktop\\CIBERTEC\\CICLO 5\\DSW\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Web.config",
+              "RelativeDocumentMoniker": "proyectoCakeAPI7\\Web.config",
+              "ToolTip": "C:\\Users\\ESTEFANIA\\Desktop\\CIBERTEC\\CICLO 5\\DSW\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Web.config",
+              "RelativeToolTip": "proyectoCakeAPI7\\Web.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-06-26T10:39:04.576Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Venta.cs",
-              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Models\\Transaccion\\Venta.cs",
-              "RelativeDocumentMoniker": "proyectoCakeAPI7\\Models\\Transaccion\\Venta.cs",
-              "ToolTip": "C:\\Users\\ESTEFANIA\\Downloads\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Models\\Transaccion\\Venta.cs",
-              "RelativeToolTip": "proyectoCakeAPI7\\Models\\Transaccion\\Venta.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "Global.asax.cs",
+              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Desktop\\CIBERTEC\\CICLO 5\\DSW\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Global.asax.cs",
+              "RelativeDocumentMoniker": "proyectoCakeAPI7\\Global.asax.cs",
+              "ToolTip": "C:\\Users\\ESTEFANIA\\Desktop\\CIBERTEC\\CICLO 5\\DSW\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Global.asax.cs",
+              "RelativeToolTip": "proyectoCakeAPI7\\Global.asax.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAABQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T15:09:27.785Z",
+              "WhenOpened": "2025-06-26T08:23:19.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WebApiConfig.cs",
+              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Desktop\\CIBERTEC\\CICLO 5\\DSW\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\App_Start\\WebApiConfig.cs",
+              "RelativeDocumentMoniker": "proyectoCakeAPI7\\App_Start\\WebApiConfig.cs",
+              "ToolTip": "C:\\Users\\ESTEFANIA\\Desktop\\CIBERTEC\\CICLO 5\\DSW\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\App_Start\\WebApiConfig.cs",
+              "RelativeToolTip": "proyectoCakeAPI7\\App_Start\\WebApiConfig.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T00:30:22.504Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ExportController.cs",
+              "DocumentMoniker": "C:\\Users\\ESTEFANIA\\Desktop\\CIBERTEC\\CICLO 5\\DSW\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Controllers\\ExportController.cs",
+              "RelativeDocumentMoniker": "proyectoCakeAPI7\\Controllers\\ExportController.cs",
+              "ToolTip": "C:\\Users\\ESTEFANIA\\Desktop\\CIBERTEC\\CICLO 5\\DSW\\DSWI_Proyecto\\DSWI_Proyecto\\proyectoCakeAPI7\\proyectoCakeAPI7\\Controllers\\ExportController.cs",
+              "RelativeToolTip": "proyectoCakeAPI7\\Controllers\\ExportController.cs",
+              "ViewState": "AQIAAJAAAAAAAAAAAAAkwPQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T06:57:06.046Z",
               "EditorCaption": ""
             }
           ]

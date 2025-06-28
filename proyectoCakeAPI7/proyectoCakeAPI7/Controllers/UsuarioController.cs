@@ -34,7 +34,8 @@ namespace proyectoCakeAPI7.Controllers
                 if (esValido == null)
                     return Unauthorized();
 
-                string token = JwtManager.GenerateToken(esValido.nombre);
+                string token = JwtManager.GenerateToken(esValido.nombre, esValido.usuarioID, esValido.idRol);
+
 
                 return Ok(new
                 {
@@ -72,6 +73,7 @@ namespace proyectoCakeAPI7.Controllers
             }
         }
 
+        [Authorize]
         [HttpGet]
         [Route("")]
         public IHttpActionResult GetAll()
@@ -87,6 +89,7 @@ namespace proyectoCakeAPI7.Controllers
             }
         }
 
+        [Authorize]
         [HttpGet]
         [Route("{id:int}")]
         public IHttpActionResult GetById(int id)
@@ -105,6 +108,7 @@ namespace proyectoCakeAPI7.Controllers
             }
         }
 
+        [Authorize]
         [HttpPut]
         [Route("{id:int}")]
         public IHttpActionResult Update(int id, [FromBody] Usuario usuario)
@@ -126,6 +130,7 @@ namespace proyectoCakeAPI7.Controllers
             }
         }
 
+        [Authorize]
         [HttpDelete]
         [Route("{id:int}")]
         public IHttpActionResult Delete(int id)
@@ -144,6 +149,26 @@ namespace proyectoCakeAPI7.Controllers
                 return InternalServerError(new Exception($"Error al eliminar el usuario con ID {id}", ex));
             }
         }
+
+        [Authorize]
+        [HttpGet]
+        [Route("actual")]
+        public IHttpActionResult UsuarioActual()
+        {
+            var identity = (System.Security.Claims.ClaimsIdentity)User.Identity;
+
+            var nombre = identity.FindFirst(System.Security.Claims.ClaimTypes.Name)?.Value;
+            var usuarioID = identity.FindFirst("usuarioID")?.Value;
+            var idRol = identity.FindFirst("idRol")?.Value;
+
+            return Ok(new
+            {
+                usuarioID,
+                nombre,
+                idRol
+            });
+        }
+
 
     }
 }

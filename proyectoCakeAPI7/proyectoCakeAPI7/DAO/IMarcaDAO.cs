@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace proyectoCakeAPI7.DAO
 {
-    internal interface IMarcaDAO
+    public interface IMarcaDAO
     {
         List<Marca> GetAll();
         Marca GetById(int id);

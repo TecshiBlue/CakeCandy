@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace proyectoCakeAPI7.DAO
 {
-    internal interface IPresentacionDAO
+    public interface IPresentacionDAO
     {
         List<Presentacion> GetAll();
         Presentacion GetById(int id);

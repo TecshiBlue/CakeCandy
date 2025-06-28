@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace proyectoCakeAPI7.DAO
 {
-    internal interface ICategoriaDAO 
+    public interface ICategoriaDAO 
     { 
         List<Categoria> GetAll();
         Categoria GetById(int id);

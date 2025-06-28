@@ -4,6 +4,7 @@ import useCallApi from "@/hooks/useCallApi";
 import { createDynamicColumns } from "@/utils/createDynamicColumns";
 import { callApi } from "@/utils/callApi";
 
+
 type Sabor = {
   idSabor: number;
   nombreSabor: string;

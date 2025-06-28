@@ -1,14 +1,16 @@
 import { useEffect, useState, useCallback } from "react";
 import { LOCAL_URL_PATH } from "@/constants/apiConstants";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 interface UseCallApiProps<BodyType = any> {
   url: string;
   methodType: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
   body?: BodyType;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const getTokenAuth = () => {
+  return localStorage.getItem("token") || null;
+};
+
 export default function useCallApi<T, BodyType = any>({
   url,
   methodType,
@@ -24,24 +26,33 @@ export default function useCallApi<T, BodyType = any>({
       setError(null);
 
       try {
+        const token = getTokenAuth();
+
         const headers: Record<string, string> = {
           Accept: "application/json",
         };
+
+        if (token) {
+          headers["Authorization"] = `Bearer ${token}`;
+        }
 
         const hasBody = ["POST", "PUT", "PATCH"].includes(methodType);
         if (hasBody) {
           headers["Content-Type"] = "application/json";
         }
 
-        const response = await fetch(`${LOCAL_URL_PATH}${url}`, {
+        const fetchOptions: RequestInit = {
           method: methodType,
           headers,
-          ...(hasBody && {
-            body: JSON.stringify(
-              overrideBody !== undefined ? overrideBody : body
-            ),
-          }),
-        });
+        };
+
+        if (hasBody) {
+          fetchOptions.body = JSON.stringify(
+            overrideBody !== undefined ? overrideBody : body
+          );
+        }
+
+        const response = await fetch(`${LOCAL_URL_PATH}${url}`, fetchOptions);
 
         if (!response.ok) {
           throw new Error(`Error ${response.status}: ${response.statusText}`);
@@ -55,15 +66,16 @@ export default function useCallApi<T, BodyType = any>({
         setLoading(false);
       }
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [url, methodType, JSON.stringify(body)]
   );
 
-  useEffect(() => {
-    if (methodType === "GET") {
-      refetch();
+    useEffect(() => {
+    const token = getTokenAuth(); 
+    if (methodType === "GET" && token) {
+      refetch(); 
     }
   }, [methodType, refetch]);
+
 
   return { data, error, loading, refetch };
 }

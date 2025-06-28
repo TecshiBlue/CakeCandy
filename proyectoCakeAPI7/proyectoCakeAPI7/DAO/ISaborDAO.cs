@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace proyectoCakeAPI7.DAO
 {
-    internal interface ISaborDAO
+    public interface ISaborDAO
     {
         List<Sabor> GetAll();
         Sabor GetById(int id);

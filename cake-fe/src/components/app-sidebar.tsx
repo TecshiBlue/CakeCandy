@@ -72,17 +72,7 @@ const data = {
       url: "/ventas",
       icon: CircleDollarSign,
     },
-    , 
-    {
-      title: "Roles",
-      url: "/roles",
-      icon: Package2,
-    },
-    , {
-      title: "Usuarios",
-      url: "/usuarios",
-      icon: ShoppingBasket,
-    },
+   
   ],
 }
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {

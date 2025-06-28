@@ -63,5 +63,50 @@ namespace proyectoCakeAPI7.Controllers
                 dao.Delete(id);
                 return Ok(new { mensaje = "Venta eliminada correctamente" });
             }
+
+        [HttpPost]
+        [Route("registrar")]
+        public IHttpActionResult RegistrarVentaCompleta([FromBody] VentaConDetallesDTO ventaDto)
+        {
+            if (ventaDto == null || ventaDto.detalles == null || ventaDto.detalles.Count == 0)
+                return BadRequest("La venta debe tener al menos un detalle.");
+
+            var venta = new Venta
+            {
+                idCliente = ventaDto.idCliente,
+                usuarioID = ventaDto.usuarioID,
+                fechaVenta = DateTime.Now
+            };
+
+            // Insertar venta (sin ID aún)
+            dao.Insert(venta);
+
+            // Obtener ID de la venta insertada (última venta registrada)
+            var ventas = dao.GetAll();
+            var ultimaVenta = ventas.OrderByDescending(v => v.idVenta).FirstOrDefault();
+
+            if (ultimaVenta == null)
+                return InternalServerError(new Exception("Error al obtener ID de la venta insertada."));
+
+            int nuevaVentaId = ultimaVenta.idVenta;
+
+            // Insertar detalles
+            IDetalleVentaDAO detalleDao = new DetalleVentaDaoImpl();
+
+            foreach (var detalleDto in ventaDto.detalles)
+            {
+                var detalle = new DetalleVenta
+                {
+                    idVenta = nuevaVentaId,
+                    idDulce = detalleDto.idDulce,
+                    cantidadDetalleVenta = detalleDto.cantidadDetalleVenta
+                };
+
+                detalleDao.Insert(detalle);
+            }
+
+            return Ok(new { mensaje = "Venta con detalles registrada correctamente", idVenta = nuevaVentaId });
         }
+
+    }
 }

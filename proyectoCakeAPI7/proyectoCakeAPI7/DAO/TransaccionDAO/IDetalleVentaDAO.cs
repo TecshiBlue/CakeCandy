@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace proyectoCakeAPI7.DAO.Transaccion
 {
-    internal interface IDetalleVentaDAO
+    public interface IDetalleVentaDAO
     {
         List<DetalleVenta> GetAll();
         DetalleVenta GetById(int id);

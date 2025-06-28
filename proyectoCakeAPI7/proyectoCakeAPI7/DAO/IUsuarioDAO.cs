@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace proyectoCakeAPI7.DAO
 {
-    internal interface IUsuarioDAO
+    public interface IUsuarioDAO
     {
         Usuario ValidarCredenciales(string nombre, string password);
         void RegistrarUsuario(Usuario usuario);

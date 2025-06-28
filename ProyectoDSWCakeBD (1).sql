@@ -556,4 +556,11 @@ VALUES
 ('Trufa');
 go
 
+select*from ROL
+select*from USUARIO
 
+INSERT INTO Rol(nombreRol)
+VALUES
+('Admin'),
+('Usuario');
+go

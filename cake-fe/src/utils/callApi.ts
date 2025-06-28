@@ -1,5 +1,11 @@
 import { LOCAL_URL_PATH } from "@/constants/apiConstants";
 
+// 👇 función para obtener el token desde localStorage
+function getTokenAuth() {
+  const token = localStorage.getItem("token");
+  return token ? token : null;
+}
+
 export async function callApi<T, BodyType = unknown>({
   url,
   methodType,
@@ -13,6 +19,12 @@ export async function callApi<T, BodyType = unknown>({
     const headers: Record<string, string> = {
       Accept: "application/json",
     };
+
+    // ✅ Agregar token si existe
+    const token = getTokenAuth();
+    if (token) {
+      headers["Authorization"] = `Bearer ${token}`;
+    }
 
     const hasBody = ["POST", "PUT", "PATCH"].includes(methodType);
     if (hasBody) {

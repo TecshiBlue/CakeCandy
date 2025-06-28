@@ -7,7 +7,7 @@ using proyectoCakeAPI7.Models;
 
 namespace proyectoCakeAPI7.DAO
 {
-    internal interface IDulceDAO
+    public interface IDulceDAO
     {
         List<Dulce> GetAll();
         Dulce GetById(int id);
