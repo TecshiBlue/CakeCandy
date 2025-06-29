@@ -14,112 +14,148 @@ interface FormField<T> {
   key: keyof T;
   label: string;
   placeholder?: string;
-  type?: string; 
-  options?: { value: string; label: string }[]; 
+  type?: "text" | "email" | "password" | "number" | "select";
+  options?: Array<{ value: string; label: string }>;
 }
 
 export interface FormModalProps<T> {
-  trigger: ReactNode;
+  trigger?: ReactNode;
   onSave?: (values: T) => void;
   initialData?: T;
   readonly?: boolean;
   title: string;
-  fields: FormField<T>[]; 
+  fields: FormField<T>[];
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
 }
 
-function FormModal<T>({
+function FormModal<T extends Record<string, any>>({
   trigger,
   onSave,
   initialData,
-  readonly,
+  readonly = false,
   title,
   fields,
+  open: controlledOpen,
+  onOpenChange,
 }: FormModalProps<T>) {
-  const [open, setOpen] = useState(false);
-  const [values, setValues] = useState<Partial<T>>({});
+  const [internalOpen, setInternalOpen] = useState(false);
+  const [formValues, setFormValues] = useState<Partial<T>>({});
+
+  const isControlled = controlledOpen !== undefined;
+  const isOpen = isControlled ? controlledOpen : internalOpen;
 
   useEffect(() => {
-    if (initialData) setValues(initialData);
-  }, [initialData]);
+    if (isOpen && initialData) {
+      setFormValues(initialData);
+    } else if (isOpen && !initialData) {
+      setFormValues({});
+    }
+  }, [isOpen, initialData]);
 
-  function handleChange(key: keyof T, value: string) {
-    setValues((prev) => ({ ...prev, [key]: value }));
-  }
+  const handleOpenChange = (open: boolean) => {
+    if (isControlled && onOpenChange) {
+      onOpenChange(open);
+    } else {
+      setInternalOpen(open);
+    }
+  };
 
-  function handleSave() {
-    if (!onSave) return;
-    onSave(values as T);
-    setOpen((prev) => !prev);
-  }
+  const handleInputChange = (key: keyof T, value: string) => {
+    setFormValues(prev => ({
+      ...prev,
+      [key]: value
+    }));
+  };
+
+  const handleSave = () => {
+    if (onSave) {
+      onSave(formValues as T);
+    }
+    handleOpenChange(false);
+  };
+
+  const handleCancel = () => {
+    handleOpenChange(false);
+  };
+
+  const renderField = (field: FormField<T>) => {
+    const value = formValues[field.key];
+    const stringValue = value !== undefined ? String(value) : "";
+
+    if (field.type === "select" && field.options) {
+      return (
+        <div key={String(field.key)} className="space-y-2">
+          <label className="block text-sm font-medium">
+            {field.label}
+          </label>
+          <select
+            value={stringValue}
+            onChange={(e) => handleInputChange(field.key, e.target.value)}
+            className="w-full rounded-md border border-input bg-background px-3 py-2"
+            disabled={readonly}
+          >
+            <option value="">Selecciona una opción</option>
+            {field.options.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </div>
+      );
+    }
+
+    return (
+      <div key={String(field.key)} className="space-y-2">
+        <label className="block text-sm font-medium">
+          {field.label}
+        </label>
+        <Input
+          value={stringValue}
+          placeholder={field.placeholder}
+          type={field.type || "text"}
+          onChange={(e) => handleInputChange(field.key, e.target.value)}
+          className="w-full"
+          disabled={readonly}
+        />
+      </div>
+    );
+  };
+
+  const renderFooter = () => {
+    if (readonly) {
+      return (
+        <Button variant="outline" onClick={handleCancel}>
+          Cerrar
+        </Button>
+      );
+    }
+
+    return (
+      <>
+        <Button variant="outline" onClick={handleCancel}>
+          Cancelar
+        </Button>
+        <Button onClick={handleSave}>
+          Guardar
+        </Button>
+      </>
+    );
+  };
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>{trigger}</DialogTrigger>
+    <Dialog open={isOpen} onOpenChange={handleOpenChange}>
+      {trigger && <DialogTrigger asChild>{trigger}</DialogTrigger>}
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
         </DialogHeader>
         <div className="grid gap-4 py-4">
-          {fields.map((f) => {
-            const value = values[f.key];
-            
-            if (f.type === "select" && f.options) {
-              const options = f.options || [];
-              const selectedValue = value ? String(value) : "";
-              
-              console.log("Rendering select with options:", options);
-              
-              return (
-                <div key={String(f.key)} className="space-y-2">
-                  <label className="block text-sm font-medium">{f.label}</label>
-                  <select
-                    value={selectedValue}
-                    onChange={(e) => handleChange(f.key, e.target.value)}
-                    className="w-full rounded-md border border-input bg-background px-3 py-2"
-                    disabled={readonly}
-                  >
-                    <option value="">Selecciona una opción</option>
-                    {options.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              );
-            }
-            
-            return (
-              <div key={String(f.key)} className="space-y-2">
-                <label className="block text-sm font-medium">{f.label}</label>
-                <Input
-                  value={value !== undefined ? String(value) : ""}
-                  placeholder={f.placeholder}
-                  type={f.type}
-                  onChange={(e) => handleChange(f.key, e.target.value)}
-                  className="w-full"
-                  disabled={readonly}
-                />
-              </div>
-            );
-          })}
+          {fields.map(renderField)}
         </div>
         <DialogFooter>
-          {!readonly ? (
-            <>
-              <Button
-                variant="outline"
-                onClick={() => setOpen((prev) => !prev)}
-              >
-                Cancelar
-              </Button>
-              <Button onClick={handleSave}>Guardar</Button>
-            </>
-          ) : (
-            <Button variant="outline" onClick={() => setOpen((prev) => !prev)}>
-              Cerrar
-            </Button>
-          )}
+          {renderFooter()}
         </DialogFooter>
       </DialogContent>
     </Dialog>

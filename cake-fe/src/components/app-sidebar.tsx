@@ -12,8 +12,10 @@ import {
   CircleDollarSign
 } from "lucide-react"
 
+
 import { NavProjects } from "@/components/nav-projects"
 import { NavUser } from "@/components/nav-user"
+import {USERNAME, ROLE} from "@/constants/userConstant"
 import TeamSwitcher from "@/components/team-switcher"
 import {
   Sidebar,
@@ -25,8 +27,8 @@ import {
 
 const data = {
   user: {
-    name: "MiguelTFD",
-    email: "migueltfd@gmail.com",
+    name: USERNAME,
+    rol: ROLE,
     avatar: "/avatars/shadcn.jpg",
   },
   navMain: [

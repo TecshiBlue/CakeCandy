@@ -1,7 +1,6 @@
 import { LOCAL_URL_PATH } from "@/constants/apiConstants";
 
-// 👇 función para obtener el token desde localStorage
-function getTokenAuth() {
+export function getTokenAuth() {
   const token = localStorage.getItem("token");
   return token ? token : null;
 }

@@ -22,7 +22,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<LoginPageContainer />} />
-        
+          <Route element={<PrivateRoute />}>
             <Route element={<Page />}>
               <Route path="/" element={<HomePageContainer />} />
               <Route path="/categorias" element={<CategoriesPageContainer />} />
@@ -38,6 +38,7 @@ function App() {
               <Route path="/dulces" element={<DulcePageContainer />} />
               <Route path="/roles" element={<RolPageContainer />} />
               <Route path="/usuarios" element={<UsuarioPageContainer />} />
+            </Route>
             </Route>
         
         </Routes>

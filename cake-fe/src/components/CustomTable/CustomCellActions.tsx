@@ -1,4 +1,4 @@
-
+import React, { useState, useCallback } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,16 +15,46 @@ interface CustomCellActionsProps<T> {
   onEdit: (item: T) => void;
   onView: (item: T) => void;
   onDelete: (item: T) => void;
-  fields: { key: keyof T; label: string; placeholder?: string; type?: string }[];
+  fields: Array<{ 
+    key: keyof T; 
+    label: string; 
+    placeholder?: string; 
+    type?: string;
+    options?: Array<{ value: string; label: string }>;
+  }>;
 }
 
-export function CustomCellActions<T>({
+export function CustomCellActions<T extends Record<string, any>>({
   row,
   onEdit,
   onView,
   onDelete,
   fields,
 }: CustomCellActionsProps<T>) {
+  const [editOpen, setEditOpen] = useState(false);
+  const [viewOpen, setViewOpen] = useState(false);
+
+  const handleEdit = useCallback((item: T) => {
+    onEdit(item);
+    setEditOpen(false);
+  }, [onEdit]);
+
+  const handleView = useCallback(() => {
+    onView(row);
+  }, [onView, row]);
+
+  const handleDelete = useCallback(() => {
+    onDelete(row);
+  }, [onDelete, row]);
+
+  const openEditModal = useCallback(() => {
+    setEditOpen(true);
+  }, []);
+
+  const openViewModal = useCallback(() => {
+    setViewOpen(true);
+  }, []);
+
   return (
     <TableCell>
       <DropdownMenu>
@@ -35,44 +65,44 @@ export function CustomCellActions<T>({
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          <DropdownMenuItem asChild>
-            <FormModal
-              trigger={
-                <div
-                  className="focus:bg-accent focus:text-accent-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none"
-                >
-                  <Pen className="mr-2 h-4 w-4" />
-                  <span>Editar</span>
-                </div>
-              }
-              title="Editar item"
-              initialData={row}
-              fields={fields}
-              onSave={onEdit}
-            />
+          <DropdownMenuItem onClick={openEditModal}>
+            <Pen className="mr-2 h-4 w-4" />
+            <span>Editar</span>
           </DropdownMenuItem>
-           <DropdownMenuItem asChild>
-            <FormModal
-              trigger={
-                <div
-                  className="focus:bg-accent focus:text-accent-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none"
-                >
-                  <EyeIcon className="mr-2 h-4 w-4" />
-                  <span>Ver</span>
-                </div>
-              }
-              title="Ver item"
-              initialData={row}
-              fields={fields}
-              readonly
-            />
+          <DropdownMenuItem onClick={openViewModal}>
+            <EyeIcon className="mr-2 h-4 w-4" />
+            <span>Ver</span>
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => onDelete(row)}>
+          <DropdownMenuItem onClick={handleDelete}>
             <TrashIcon className="mr-2 h-4 w-4" />
-            Delete
+            <span>Delete</span>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
+
+      {/* Only render modals when they're open to prevent unnecessary renders */}
+      {editOpen && (
+        <FormModal
+          open={editOpen}
+          onOpenChange={setEditOpen}
+          title="Editar item"
+          initialData={row}
+          fields={fields}
+          onSave={handleEdit}
+        />
+      )}
+
+      {viewOpen && (
+        <FormModal
+          open={viewOpen}
+          onOpenChange={setViewOpen}
+          title="Ver item"
+          initialData={row}
+          fields={fields}
+          readonly
+          onSave={handleView}
+        />
+      )}
     </TableCell>
   );
 }

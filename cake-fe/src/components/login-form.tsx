@@ -44,6 +44,8 @@ export function LoginForm({
 
       const data = await res.json();
       localStorage.setItem("token", data.token);
+      localStorage.setItem("usuario", data.userName);
+      localStorage.setItem("rol", data.roleName);
       navigate("/");
     } catch (err) {
       console.error(err);

@@ -33,7 +33,7 @@ export function NavUser({
 }: {
   user: {
     name: string
-    email: string
+    rol: string
     avatar: string
   }
 }) {
@@ -43,6 +43,12 @@ export function NavUser({
   const handleClick = (url: string) => {
     navigate(url);
   };
+
+  function logout() {
+  localStorage.removeItem("token"); 
+  window.location.href = "/login";
+}
+
   return (
     <SidebarMenu>
       <SidebarMenuItem>
@@ -58,7 +64,7 @@ export function NavUser({
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-medium">{user.name}</span>
-                <span className="truncate text-xs">{user.email}</span>
+                <span className="truncate text-xs">{user.rol}</span>
               </div>
               <ChevronsUpDown className="ml-auto size-4" />
             </SidebarMenuButton>
@@ -77,7 +83,7 @@ export function NavUser({
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-medium">{user.name}</span>
-                  <span className="truncate text-xs">{user.email}</span>
+                  <span className="truncate text-xs">{user.rol}</span>
                 </div>
               </div>
             </DropdownMenuLabel>
@@ -89,7 +95,7 @@ export function NavUser({
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            <DropdownMenuItem onClick={()=>logout()}>
               <LogOut />
               Log out
             </DropdownMenuItem>
