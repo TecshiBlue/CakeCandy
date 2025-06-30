@@ -86,14 +86,7 @@ export function NavUser({
                   <span className="truncate text-xs">{user.rol}</span>
                 </div>
               </div>
-            </DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuGroup>
-              <DropdownMenuItem onClick={()=>handleClick("/usuarioDetalle")}>
-                <BadgeCheck />
-                Account
-              </DropdownMenuItem>
-            </DropdownMenuGroup>
+            </DropdownMenuLabel>      
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={()=>logout()}>
               <LogOut />

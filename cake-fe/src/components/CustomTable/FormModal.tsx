@@ -8,158 +8,109 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ReactNode, useState, useEffect } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
 interface FormField<T> {
   key: keyof T;
   label: string;
   placeholder?: string;
-  type?: "text" | "email" | "password" | "number" | "select";
-  options?: Array<{ value: string; label: string }>;
+  type?: string;
+  options?: { value: string; label: string }[];
 }
 
 export interface FormModalProps<T> {
   trigger?: ReactNode;
-  onSave?: (values: T) => void;
-  initialData?: T;
-  readonly?: boolean;
   title: string;
   fields: FormField<T>[];
-  open?: boolean;
-  onOpenChange?: (open: boolean) => void;
+  initialData?: T;
+  readonly?: boolean;
+  open: boolean;
+  onOpenChange: (isOpen: boolean) => void;
+  onSave?: (values: T) => void;
 }
 
-function FormModal<T extends Record<string, any>>({
+export default function FormModal<T>({
   trigger,
-  onSave,
-  initialData,
-  readonly = false,
   title,
   fields,
-  open: controlledOpen,
+  initialData,
+  readonly = false,
+  open,
   onOpenChange,
+  onSave,
 }: FormModalProps<T>) {
-  const [internalOpen, setInternalOpen] = useState(false);
-  const [formValues, setFormValues] = useState<Partial<T>>({});
-
-  const isControlled = controlledOpen !== undefined;
-  const isOpen = isControlled ? controlledOpen : internalOpen;
+  const [values, setValues] = useState<Partial<T>>({});
 
   useEffect(() => {
-    if (isOpen && initialData) {
-      setFormValues(initialData);
-    } else if (isOpen && !initialData) {
-      setFormValues({});
-    }
-  }, [isOpen, initialData]);
+    setValues(initialData ?? {});
+  }, [initialData]);
 
-  const handleOpenChange = (open: boolean) => {
-    if (isControlled && onOpenChange) {
-      onOpenChange(open);
-    } else {
-      setInternalOpen(open);
-    }
-  };
-
-  const handleInputChange = (key: keyof T, value: string) => {
-    setFormValues(prev => ({
-      ...prev,
-      [key]: value
-    }));
+  const handleChange = (key: keyof T, value: string) => {
+    setValues((v) => ({ ...v, [key]: value }));
   };
 
   const handleSave = () => {
-    if (onSave) {
-      onSave(formValues as T);
-    }
-    handleOpenChange(false);
+    if (onSave) onSave(values as T);
+    onOpenChange(false);
+     window.location.reload(); 
   };
 
   const handleCancel = () => {
-    handleOpenChange(false);
-  };
-
-  const renderField = (field: FormField<T>) => {
-    const value = formValues[field.key];
-    const stringValue = value !== undefined ? String(value) : "";
-
-    if (field.type === "select" && field.options) {
-      return (
-        <div key={String(field.key)} className="space-y-2">
-          <label className="block text-sm font-medium">
-            {field.label}
-          </label>
-          <select
-            value={stringValue}
-            onChange={(e) => handleInputChange(field.key, e.target.value)}
-            className="w-full rounded-md border border-input bg-background px-3 py-2"
-            disabled={readonly}
-          >
-            <option value="">Selecciona una opción</option>
-            {field.options.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </div>
-      );
-    }
-
-    return (
-      <div key={String(field.key)} className="space-y-2">
-        <label className="block text-sm font-medium">
-          {field.label}
-        </label>
-        <Input
-          value={stringValue}
-          placeholder={field.placeholder}
-          type={field.type || "text"}
-          onChange={(e) => handleInputChange(field.key, e.target.value)}
-          className="w-full"
-          disabled={readonly}
-        />
-      </div>
-    );
-  };
-
-  const renderFooter = () => {
-    if (readonly) {
-      return (
-        <Button variant="outline" onClick={handleCancel}>
-          Cerrar
-        </Button>
-      );
-    }
-
-    return (
-      <>
-        <Button variant="outline" onClick={handleCancel}>
-          Cancelar
-        </Button>
-        <Button onClick={handleSave}>
-          Guardar
-        </Button>
-      </>
-    );
+    onOpenChange(false);
+    window.location.reload();
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={handleOpenChange}>
+    <Dialog open={open} onOpenChange={onOpenChange}>
       {trigger && <DialogTrigger asChild>{trigger}</DialogTrigger>}
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
         </DialogHeader>
+
         <div className="grid gap-4 py-4">
-          {fields.map(renderField)}
+          {fields.map(({ key, label, placeholder, type, options }) => {
+            const val = values[key] ?? "";
+            const sharedProps = {
+              value: String(val),
+              onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
+                handleChange(key, e.target.value),
+              disabled: readonly,
+              className: "w-full",
+            };
+
+            return (
+              <div key={String(key)} className="space-y-2">
+                <label className="block text-sm font-medium">{label}</label>
+
+                {type === "select" && options ? (
+                  <select {...sharedProps} className="rounded-md border px-3 py-2">
+                    <option value="">Selecciona una opción</option>
+                    {options.map((opt) => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
+                    ))}
+                  </select>
+                ) : (
+                  <Input
+                    {...sharedProps}
+                    placeholder={placeholder}
+                    type={type}
+                  />
+                )}
+              </div>
+            );
+          })}
         </div>
+
         <DialogFooter>
-          {renderFooter()}
+          <Button variant="outline" onClick={handleCancel}>
+            {readonly ? "Cerrar" : "Cancelar"}
+          </Button>
+          {!readonly && <Button onClick={handleSave}>Guardar</Button>}
         </DialogFooter>
       </DialogContent>
     </Dialog>
   );
 }
-
-export default FormModal;

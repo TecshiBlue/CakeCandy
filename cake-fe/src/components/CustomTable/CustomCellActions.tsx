@@ -75,7 +75,7 @@ export function CustomCellActions<T extends Record<string, any>>({
           </DropdownMenuItem>
           <DropdownMenuItem onClick={handleDelete}>
             <TrashIcon className="mr-2 h-4 w-4" />
-            <span>Delete</span>
+            <span>Eliminar</span>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

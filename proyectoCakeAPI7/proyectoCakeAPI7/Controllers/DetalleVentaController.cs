@@ -1,4 +1,4 @@
-﻿using proyectoCakeAPI7.DAO.DaoImpl.TransaccionImpl;
+﻿/* using proyectoCakeAPI7.DAO.DaoImpl.TransaccionImpl;
 using proyectoCakeAPI7.DAO.Transaccion;
 using proyectoCakeAPI7.Models.Transaccion;
 using System;
@@ -48,20 +48,6 @@ namespace proyectoCakeAPI7.Controllers
             return Ok(new { mensaje = "Detalle de venta insertado correctamente" });
         }
 
-        [HttpPut]
-        [Route("{id:int}")]
-        public IHttpActionResult Put(int id, [FromBody] DetalleVenta detalle)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            if (dao.GetById(id) == null)
-                return NotFound();
-
-            dao.Update(id, detalle);
-            return Ok(new { mensaje = "Detalle de venta actualizado correctamente" });
-        }
-
         [HttpDelete]
         [Route("{id:int}")]
         public IHttpActionResult Delete(int id)
@@ -73,4 +59,4 @@ namespace proyectoCakeAPI7.Controllers
             return Ok(new { mensaje = "Detalle de venta eliminado correctamente" });
         }
     }
-}
+} */

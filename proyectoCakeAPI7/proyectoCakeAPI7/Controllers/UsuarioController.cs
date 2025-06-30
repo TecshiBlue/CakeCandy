@@ -15,7 +15,7 @@ namespace proyectoCakeAPI7.Controllers
     public class UsuarioController : ApiController
     {
         private readonly IUsuarioDAO usuarioDAO = new UsuarioDaoImpl();
-
+        private readonly IRolDAO rolDAO = new RolDaoImpl();
 
         [HttpPost]
         [Route("login")]
@@ -35,13 +35,18 @@ namespace proyectoCakeAPI7.Controllers
                     return Unauthorized();
 
                 string token = JwtManager.GenerateToken(esValido.nombre, esValido.usuarioID, esValido.idRol);
+                Rol rol = rolDAO.GetById(esValido.idRol);
+                string roleName = rol.nombreRol.ToString();
+                string userName = esValido.nombre;
+
 
 
                 return Ok(new
                 {
                     mensaje = "Login correcto",
                     token,
-                    usuario = new { esValido.usuarioID, esValido.nombre, esValido.idRol }
+                    roleName,
+                    userName
                 });
             }
             catch (Exception ex)
@@ -105,28 +110,6 @@ namespace proyectoCakeAPI7.Controllers
             catch (Exception ex)
             {
                 return InternalServerError(new Exception($"Error al obtener el usuario con ID {id}", ex));
-            }
-        }
-
-        [Authorize]
-        [HttpPut]
-        [Route("{id:int}")]
-        public IHttpActionResult Update(int id, [FromBody] Usuario usuario)
-        {
-            try
-            {
-                if (usuario == null)
-                    return BadRequest("Datos de usuario inválidos");
-
-                if (string.IsNullOrWhiteSpace(usuario.nombre) || string.IsNullOrWhiteSpace(usuario.passwordHash) || usuario.idRol == 0)
-                    return BadRequest("Nombre y contraseña son requeridos");
-
-                usuarioDAO.Update(id, usuario);
-                return Ok(new { mensaje = "Usuario actualizado correctamente" });
-            }
-            catch (Exception ex)
-            {
-                return InternalServerError(new Exception($"Error al actualizar el usuario con ID {id}", ex));
             }
         }
 
